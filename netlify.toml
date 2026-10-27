@@ -1,0 +1,21 @@
+# Static deploy: `vite build` prerenders every page into dist/client.
+# Don't add the Netlify TanStack Start adapter — it would turn SSR back on as Netlify Functions.
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Hashed build assets never change, so cache them for a year.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
