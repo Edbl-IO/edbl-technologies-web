@@ -7,6 +7,17 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# The only server code: the contact form handler at /api/contact.
+[functions]
+  directory = "netlify/functions"
+
+# `npx netlify dev` runs the Vite dev server plus the functions on http://localhost:8888.
+[dev]
+  framework = "#custom"
+  command = "npm run dev"
+  targetPort = 4000
+  port = 8888
+
 # Hashed build assets never change, so cache them for a year.
 [[headers]]
   for = "/assets/*"

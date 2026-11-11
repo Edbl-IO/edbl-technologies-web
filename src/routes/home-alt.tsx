@@ -16,6 +16,7 @@ import {
   Utensils,
   Wine,
 } from "lucide-react";
+import { ContactLink } from "@/components/contact-dialog";
 import { FeatureCarousel } from "@/components/feature-carousel";
 import {
   BrandMark,
@@ -178,7 +179,7 @@ function HomePage() {
         </section>
       </main>
 
-      <footer><div className="footer-brand"><a className="logo" href="#top"><BrandMark /><span>edbl</span></a><p>Good food, sorted.</p></div><div><strong>Product</strong><a href="#features">Features</a><a href="#core-manager">Core Manager</a><a href="#how-it-works">How it works</a><a href="#download">Download</a></div><div><strong>Company</strong>{/* TODO: Replace placeholder destinations when About and Contact pages exist. */}<a href="#top">About</a><a href="#top">Contact</a></div><div><strong>Legal</strong>{/* TODO: Replace placeholder destinations when legal pages exist. */}<a href="#top">Privacy Policy</a><a href="#top">Terms</a></div><p className="copyright">© edbl. All rights reserved.</p></footer>
+      <footer><div className="footer-brand"><a className="logo" href="#top"><BrandMark /><span>edbl</span></a><p>Good food, sorted.</p></div><div><strong>Product</strong><a href="#features">Features</a><a href="#core-manager">Core Manager</a><a href="#how-it-works">How it works</a><a href="#download">Download</a></div><div><strong>Company</strong>{/* TODO: Replace placeholder destination when an About page exists. */}<a href="#top">About</a><ContactLink /></div><div><strong>Legal</strong>{/* TODO: Replace placeholder destination when a Terms page exists. */}<a href="/privacy">Privacy Policy</a><a href="#top">Terms</a></div><p className="copyright">© edbl. All rights reserved.</p></footer>
     </div>
   );
 }
