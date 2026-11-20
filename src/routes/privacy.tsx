@@ -5,10 +5,10 @@ import { BrandMark, ThemeSwitch, useTheme } from "@/components/home-shared";
 
 // Privacy policy for this marketing website only. The edbl app has its own policy.
 // Keep it in step with what the site actually does: the contact form
-// (netlify/functions/contact.mts → Brevo), Netlify hosting, Google Fonts and the
+// (netlify/functions/contact.mts → Brevo or HubSpot), Netlify hosting, Google Fonts and the
 // browser storage used by useTheme and lib/stale-module-recovery.ts.
 
-const LAST_UPDATED = "29 October 2026";
+const LAST_UPDATED = "20 November 2026";
 const CONTACT_EMAIL = "hello@edbl.app";
 
 export const Route = createFileRoute("/privacy")({
@@ -112,7 +112,8 @@ function PrivacyPage() {
         </p>
         <ul>
           <li>
-            <strong>Brevo</strong> (Sendinblue SAS, France): stores our contact list, including
+            <strong>Brevo</strong> (Sendinblue SAS, France) or <strong>HubSpot</strong> (HubSpot,
+            Inc., United States), depending on which we use: stores our contact list, including
             contact-form messages, and delivers the emails we send.
           </li>
           <li>

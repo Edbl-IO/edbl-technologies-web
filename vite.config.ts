@@ -4,7 +4,7 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 
 // Dev only: serves netlify/functions/contact.mts at /api/contact during `npm run dev`,
-// so the contact form works without the Netlify CLI. Brevo settings come from .env.
+// so the contact form works without the Netlify CLI. CRM settings (Brevo or HubSpot) come from .env.
 // In production Netlify runs the same file as a real Netlify Function.
 function contactFunctionDevServer(): Plugin {
   return {
@@ -13,7 +13,7 @@ function contactFunctionDevServer(): Plugin {
     configureServer(server) {
       Object.assign(
         process.env,
-        loadEnv(server.config.mode, process.cwd(), ["BREVO_", "CONTACT_"]),
+        loadEnv(server.config.mode, process.cwd(), ["BREVO_", "HUBSPOT_", "CONTACT_"]),
       );
       server.middlewares.use("/api/contact", async (req, res) => {
         try {

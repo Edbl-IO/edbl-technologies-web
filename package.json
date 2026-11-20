@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "preview:static": "npx serve dist/client"
+    "preview:static": "npx serve dist/client",
+    "test": "node --experimental-strip-types --test \"netlify/**/*.test.mts\""
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

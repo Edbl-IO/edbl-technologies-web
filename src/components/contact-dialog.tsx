@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Check, X } from "lucide-react";
 
 // Footer "Contact" link plus the contact form modal. Submissions go to the
-// Netlify Function at /api/contact, which saves the person and their message in Brevo and emails
-// the message to the team (see netlify/functions/contact.mts).
+// Netlify Function at /api/contact, which saves the person and their message in the configured
+// CRM, Brevo or HubSpot (see netlify/functions/contact.mts). The form is the same for both.
 
 type Status = "idle" | "sending" | "sent" | "error";
 
